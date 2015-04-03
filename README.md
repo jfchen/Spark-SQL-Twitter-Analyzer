@@ -1,13 +1,18 @@
 Spark-SQL-Twitter-Analyzer 
 ```
-Process large amount of Twitter data using Spark SQL (and its JSON support). Answers questions like 
-"What are the most popular languages?", 
-"Who is most influential?", 
-"Which time zones are most active during a day?" and more.
+Process large amount of Twitter data using Spark SQL (and its JSON support). 
+Answers questions like 
 
-With Spark SQL support for JSON dataset, you are ready to analyze Twitter data in Spark using 
-familiar SQL syntax. For example, to answer the question "Which time zones are the most active per day?", 
-you simply run the following query in Spark:
+- "What are the most popular languages?"
+- "Who is most influential?"
+- "Which time zones are most active during a day?"
+
+and more.
+
+With Spark SQL support for JSON dataset, you are ready to analyze Twitter data 
+in Spark using familiar SQL syntax. For example, to answer the question 
+"Which time zones are the most active per day?", you simply run the 
+following query in Spark:
 
         SELECT
          actor.twitterTimeZone,
@@ -21,9 +26,9 @@ you simply run the following query in Spark:
         ORDER BY total_count DESC
         LIMIT 15
         
-This package has 5 Twitter queries implemented in Scala (and can be built into a standalone app which 
-you can run via the spark-submit program). Below is the output from running this app, on a 
-16 million tweets dataset:
+This package has 5 Twitter queries implemented in Scala (and can be built 
+into a standalone app which you can run via the spark-submit program). 
+Below is the output from running this app, on a 16 million tweets dataset:
 
 Q1 ------ Total count by languages Lang, count(*) ---
 [ArrayBuffer(en),5777222]
@@ -119,7 +124,8 @@ query time: 2.950492016 sec
 
 Usage
 
-1. To build, lay out the sbt src tree and copy this package into it, then run 'bin/sbt package', for example:
+1. To build, lay out the sbt src tree and copy this package into it, 
+then run 'bin/sbt package', for example:
 
 % bin/sbt package
 [info] Loading project definition from /TestAutomation/sbt/project
@@ -139,8 +145,6 @@ Usage
 3. Run the app in Spark
 
 % sudo runuser -l yarn -c "/usr/bin/spark-submit --master yarn-cluster  --name Analyze --executor-memory 4096m  --num-executors 100 --class com.ibm.apps.twitter_classifier.Analyze /TestAutomation/sbt/target/scala-2.10/sparksqltwitteranalyzer_2.10-1.2.1.jar /twitter/data  > /tmp/Analyze.out  2>&1 "
-
-.end.
 
 Output of the program will be in stdout of YARN job file (via historyserver
 
