@@ -142,9 +142,16 @@ then run 'bin/sbt package', for example:
 
 % hadoop fs -copyFromLocal /yourdir/sampletweets2015.dat /twitter/data/.
 
-3. Run the app in Spark
+3. Run the app in Spark (as in one line):
 
-% sudo runuser -l yarn -c "/usr/bin/spark-submit --master yarn-cluster  --name Analyze --executor-memory 4096m  --num-executors 100 --class com.ibm.apps.twitter_classifier.Analyze /TestAutomation/sbt/target/scala-2.10/sparksqltwitteranalyzer_2.10-1.2.1.jar /twitter/data  > /tmp/Analyze.out  2>&1 "
+% sudo runuser -l yarn -c "/usr/bin/spark-submit --master yarn-cluster  
+--name Analyze 
+--executor-memory 4096m  
+--num-executors 100 
+--class com.ibm.apps.twitter_classifier.Analyze /TestAutomation/sbt/target/scala-2.10/sparksqltwitteranalyzer_2.10-1.2.1.jar /twitter/data 
+> /tmp/Analyze.out  2>&1 "
+
+The above command uses a total of 400GB (100 4096m-sized executors).
 
 Output of the program will be in stdout of YARN job file (via historyserver
 
