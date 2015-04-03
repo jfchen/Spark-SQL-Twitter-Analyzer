@@ -1,11 +1,13 @@
 Spark-SQL-Twitter-Analyzer 
 ```
-Process large amount of Twitter data using Spark SQL (and its JSON support). Answers questions like "What are the most popular languages?", "Who is most influential?", "Which time zones are most active during a day?" and more.
+Process large amount of Twitter data using Spark SQL (and its JSON support). Answers questions like 
+"What are the most popular languages?", 
+"Who is most influential?", 
+"Which time zones are most active during a day?" and more.
 
-With Spark SQL support for JSON dataset, you are ready to analyze Twitter data in Spark using familiar SQL syntax.
-
-For example, to answer the question "Which time zones are the most active per day?", you simply run this query in
-Spark:
+With Spark SQL support for JSON dataset, you are ready to analyze Twitter data in Spark using 
+familiar SQL syntax. For example, to answer the question "Which time zones are the most active per day?", 
+you simply run the following query in Spark:
 
         SELECT
          actor.twitterTimeZone,
@@ -19,7 +21,9 @@ Spark:
         ORDER BY total_count DESC
         LIMIT 15
         
-This package has 5 Twitter queries implemented in Scala (and can be built into a standalone app which you can run via the spark-submit program). Below is the output from running this app, on a 16 million Twitter dataset:
+This package has 5 Twitter queries implemented in Scala (and can be built into a standalone app which 
+you can run via the spark-submit program). Below is the output from running this app, on a 
+16 million tweets dataset:
 
 Q1 ------ Total count by languages Lang, count(*) ---
 [ArrayBuffer(en),5777222]
