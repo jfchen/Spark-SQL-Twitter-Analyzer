@@ -1,4 +1,4 @@
-# Spark-SQL-Twitter-Analyzer
+ <nowiki> Spark-SQL-Twitter-Analyzer 
 Process large amount of Twitter data using Spark SQL (and its JSON support). Answers questions like "What are the most popular languages?", "Who is most influential?", "Which time zones are most active during a day?" and more.
 
 With Spark SQL support for JSON dataset, you are ready to analyze Twitter data in Spark using familiar SQL syntax.
@@ -267,19 +267,4 @@ Q5 ------ Top devices used among all Twitter users ---
 [Hootsuite,46453]
 Q5 completed.
 query time: 2.950492016 sec
-
- 
-
-
-
- 
-
-
-
-
-
-
-
-
-
-2. 
+</nowiki>
